@@ -1,0 +1,475 @@
+:root {
+    /* Colores del Saitama Serio - Paleta oscura y poderosa */
+    --serious-black: #1a1a1a;
+    /* Negro profundo */
+    --serious-dark-gray: #2d2d2d;
+    /* Gris oscuro */
+    --serious-gray: #404040;
+    /* Gris medio */
+    --serious-light-gray: #606060;
+    /* Gris claro */
+    --serious-white: #f0f0f0;
+    /* Blanco apagado */
+    --serious-red: #8b0000;
+    /* Rojo sangre oscuro */
+    --serious-crimson: #dc143c;
+    /* Rojo intenso */
+    --serious-gold: #b8860b;
+    /* Dorado oscuro */
+    --serious-yellow: #daa520;
+    /* Amarillo dorado */
+    --steel-blue: #4682b4;
+    /* Azul acero */
+    --iron-gray: #36454f;
+    /* Gris hierro */
+    --shadow-black: rgba(0, 0, 0, 0.8);
+    --text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(135deg, var(--serious-black) 0%, var(--serious-dark-gray) 30%, var(--iron-gray) 70%, var(--serious-gray) 100%);
+    min-height: 100vh;
+    overflow-x: hidden;
+    color: var(--serious-white);
+    position: relative;
+    z-index: 1;
+}
+
+#background-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.hero-section {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 0;
+}
+
+.hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, rgba(220, 20, 60, 0.1) 0%, transparent 70%);
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: var(--serious-white);
+}
+
+.main-title {
+    font-family: 'Orbitron', monospace;
+    font-size: 4rem;
+    font-weight: 900;
+    text-shadow: 3px 3px 6px var(--shadow-black);
+    margin-bottom: 1rem;
+    color: var(--serious-white);
+    animation: serious-glow 3s ease-in-out infinite alternate;
+}
+
+.subtitle {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--serious-gold);
+    text-shadow: 2px 2px 4px var(--shadow-black);
+    margin-bottom: 2rem;
+    animation: serious-pulse 2s infinite;
+}
+
+.saitama-quote {
+    font-size: 1.5rem;
+    font-style: italic;
+    margin-bottom: 2rem;
+    padding: 1rem 2rem;
+    background: linear-gradient(135deg, var(--serious-red), var(--serious-crimson));
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    border: 3px solid var(--serious-gold);
+    box-shadow: 0 0 20px rgba(139, 0, 0, 0.5);
+}
+
+.hero-card {
+    border-radius: 20px;
+    padding: 3rem;
+    box-shadow: 0 20px 40px var(--shadow-black);
+    border: 5px solid var(--serious-gold);
+    max-width: 800px;
+    margin: 0 auto;
+    transform: translateY(20px);
+    animation: serious-float 4s ease-in-out infinite;
+    background: linear-gradient(135deg, rgba(26, 26, 26, 0.7), rgba(45, 45, 45, 0.6), rgba(54, 69, 79, 0.5));
+    /* Fondo oscuro translúcido para dejar ver el video */
+    backdrop-filter: blur(8px) brightness(1.1);
+    /* Efecto de desenfoque y leve brillo */
+}
+
+.hero-card h1 {
+    color: var(--serious-crimson);
+    margin-bottom: 1.5rem;
+}
+
+.hero-card p {
+    color: var(--serious-white);
+    font-size: 1.2rem;
+    line-height: 1.6;
+}
+
+.saitama-image-container {
+    width: 200px;
+    height: 200px;
+    margin: 2rem auto;
+    position: relative;
+    animation: serious-pulse 3s infinite;
+    border: 4px solid var(--serious-crimson);
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 0 30px rgba(220, 20, 60, 0.3);
+}
+
+.papa-saitama-img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    filter: brightness(1.1) contrast(1.2);
+    transition: transform 0.3s ease;
+}
+
+.papa-saitama-img:hover {
+    transform: scale(1.05);
+}
+
+.power-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin: 3rem 0;
+}
+
+.stat-card {
+    padding: 2rem;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 10px 20px var(--shadow-black);
+    border: 3px solid var(--serious-gold);
+    transition: transform 0.3s ease;
+    background: linear-gradient(135deg, rgba(26, 26, 26, 0.7), rgba(45, 45, 45, 0.6), rgba(54, 69, 79, 0.5));
+    /* Fondo oscuro translúcido para dejar ver el video */
+    backdrop-filter: blur(8px) brightness(1.1);
+    /* Efecto de desenfoque y leve brillo */
+}
+
+.stat-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--serious-crimson);
+    box-shadow: 0 15px 30px rgba(220, 20, 60, 0.4);
+}
+
+.stat-icon {
+    font-size: 3rem;
+    color: var(--serious-crimson);
+    margin-bottom: 1rem;
+    text-shadow: 0 0 10px rgba(220, 20, 60, 0.5);
+}
+
+.stat-title {
+    font-family: 'Orbitron', monospace;
+    font-weight: 700;
+    color: var(--serious-gold);
+    margin-bottom: 0.5rem;
+}
+
+.stat-description {
+    color: var(--serious-white);
+    font-size: 0.9rem;
+}
+
+.floating-elements {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.floating-star {
+    position: absolute;
+    color: var(--serious-gold);
+    font-size: 2rem;
+    animation: serious-float-star 8s linear infinite;
+    opacity: 0.6;
+    text-shadow: 0 0 10px rgba(184, 134, 11, 0.5);
+}
+
+.cta-section {
+    background: linear-gradient(135deg, var(--serious-black), var(--serious-dark-gray));
+    padding: 4rem 0;
+    margin-top: 3rem;
+    border-top: 3px solid var(--serious-gold);
+}
+
+.cta-content {
+    text-align: center;
+    color: var(--serious-white);
+}
+
+.cta-title {
+    font-family: 'Orbitron', monospace;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    text-shadow: var(--text-shadow);
+    color: var(--serious-gold);
+}
+
+.hero-button {
+    background: linear-gradient(45deg, var(--serious-gold), var(--serious-yellow));
+    color: var(--serious-black);
+    border: 3px solid var(--serious-crimson);
+    padding: 1rem 3rem;
+    font-size: 1.2rem;
+    font-weight: 700;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 20px var(--shadow-black);
+}
+
+.hero-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 30px rgba(220, 20, 60, 0.4);
+    background: linear-gradient(45deg, var(--serious-crimson), var(--serious-red));
+    border-color: var(--serious-gold);
+    color: var(--serious-white);
+}
+
+/* Estilos para la galería */
+.gallery-section {
+    background: linear-gradient(135deg, var(--serious-dark-gray), var(--iron-gray));
+    padding: 4rem 0;
+    border-top: 3px solid var(--serious-gold);
+}
+
+.gallery-content {
+    text-align: center;
+    color: var(--serious-white);
+}
+
+.gallery-title {
+    font-family: 'Orbitron', monospace;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    text-shadow: var(--text-shadow);
+    color: var(--serious-gold);
+    animation: serious-glow 3s ease-in-out infinite alternate;
+}
+
+.gallery-subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 3rem;
+    color: var(--serious-white);
+    opacity: 0.9;
+}
+
+.image-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.gallery-item {
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px var(--shadow-black);
+    border: 3px solid var(--serious-gold);
+    transition: all 0.3s ease;
+    background: var(--serious-dark-gray);
+}
+
+.gallery-item:hover {
+    transform: translateY(-10px) scale(1.05);
+    border-color: var(--serious-crimson);
+    box-shadow: 0 20px 40px rgba(220, 20, 60, 0.4);
+}
+
+.gallery-gif {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover .gallery-gif {
+    transform: scale(1.1);
+}
+
+.gallery-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, var(--serious-black));
+    color: var(--serious-white);
+    padding: 1.5rem;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover .gallery-overlay {
+    transform: translateY(0);
+}
+
+.gallery-overlay h4 {
+    font-family: 'Orbitron', monospace;
+    color: var(--serious-gold);
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.gallery-overlay p {
+    font-size: 0.9rem;
+    margin: 0;
+    opacity: 0.9;
+}
+
+keyframes serious-glow {
+    from {
+        text-shadow: 3px 3px 6px var(--shadow-black);
+    }
+
+    to {
+        text-shadow: 0 0 20px var(--serious-gold), 0 0 30px var(--serious-yellow), 3px 3px 6px var(--shadow-black);
+    }
+}
+
+@keyframes serious-pulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    50% {
+        transform: scale(1.02);
+        opacity: 0.9;
+    }
+}
+
+@keyframes serious-float {
+
+    0%,
+    100% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+@keyframes serious-float-star {
+    0% {
+        transform: translateY(100vh) rotate(0deg);
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 0.6;
+    }
+
+    90% {
+        opacity: 0.6;
+    }
+
+    100% {
+        transform: translateY(-100px) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .main-title {
+        font-size: 2.5rem;
+    }
+
+    .subtitle {
+        font-size: 1.8rem;
+    }
+
+    .hero-card {
+        padding: 2rem;
+        margin: 1rem;
+    }
+
+    .saitama-quote {
+        font-size: 1.2rem;
+        padding: 1rem;
+    }
+
+    .power-stats {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-title {
+        font-size: 1.8rem;
+    }
+
+    .image-gallery {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .gallery-gif {
+        height: 200px;
+    }
+}
+
+/* Animación suave para el modal personalizado */
+.custom-fade-modal .modal-dialog {
+    transform: translateY(40px);
+    opacity: 0;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.custom-fade-modal.show .modal-dialog {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.modal-content {
+    background: linear-gradient(135deg, var(--serious-black), var(--serious-dark-gray)) !important;
+    border: 4px solid var(--serious-gold) !important;
+}
+
+/* Asegura que el resto del contenido esté por encima del video */
+.floating-elements,
+.hero-section,
+.cta-section,
+.gallery-section {
+    position: relative;
+    z-index: 2;
+}

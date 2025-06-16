@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feliz Día del Padre - One Punch Man</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Roboto:wght@300;400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="icon" type="image/png" href="images/papasaitama.png">
+</head>
+
+<body>
+    <video id="background-video" autoplay loop muted playsinline poster="images/papasaitama.png"></video>
+    <script>
+        // Insertar el video de fondo dinámicamente para asegurar que esté debajo de todo el contenido
+        document.addEventListener('DOMContentLoaded', function () {
+            const video = document.getElementById('background-video');
+            video.src = 'video/opsatiama.webm'; // Asegúrate de que la ruta sea correcta
+            video.muted = true; // Asegura que el video SIEMPRE esté silenciado
+        });
+    </script>
+
+    <div class="floating-elements">
+        <div class="floating-star" style="left: 10%; animation-delay: 0s;">⭐</div>
+        <div class="floating-star" style="left: 30%; animation-delay: 2s;">⚡</div>
+        <div class="floating-star" style="left: 50%; animation-delay: 4s;">💥</div>
+        <div class="floating-star" style="left: 70%; animation-delay: 1s;">🥊</div>
+        <div class="floating-star" style="left: 90%; animation-delay: 3s;">⭐</div>
+    </div>
+
+    <section class="hero-section">
+        <div class="hero-bg"></div>
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="main-title">¡FELIZ DÍA DEL PADRE!</h1>
+                <h2 class="subtitle">Te Quiero Mucho Papá</h2>
+
+                <div class="hero-card">
+                    <div class="saitama-image-container">
+                        <img src="images/perfil.png" alt="Papa Saitama" class="papa-saitama-img">
+                    </div>
+
+                    <div class="saitama-quote">
+                        "Eres mi héroe favorito, papá. Más fuerte que Saitama, más sabio que Genos, y con un espiritu más
+                        grande que cualquier superhéroe."
+                    </div>
+
+                    <div class="power-stats">
+                        <div class="stat-card">
+                            <div class="stat-icon">💪</div>
+                            <h3 class="stat-title">FUERZA</h3>
+                            <p class="stat-description">Infinita, como tu resiliencia</p>
+                        </div>
+
+                        <div class="stat-card">
+                            <div class="stat-icon">❤️</div>
+                            <h3 class="stat-title">AMOR</h3>
+                            <p class="stat-description">Más poderoso que cualquier One Punch</p>
+                        </div>
+
+                        <div class="stat-card">
+                            <div class="stat-icon">🧠</div>
+                            <h3 class="stat-title">MEMORIA</h3>
+                            <p class="stat-description">Level: Héroe Clase S+</p>
+                        </div>
+                    </div>
+
+                    <p class="lead">
+                        Papá, así como Saitama se convirtió en héroe por diversión, tú te convertiste en mi héroe
+                        simplemente siendo tú mismo. Gracias por ser mi Papa.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2 class="cta-title">¡Eres mi One Punch Dad!</h2>
+                <p class="lead mb-4">
+                    Con un solo abrazo tuyo, todos mis problemas desaparecen. Con una sola sonrisa, iluminas mi día.
+                    Eres más genial que Saitama y más cool que Genos juntos.
+                </p>
+                <button class="hero-button" onclick="showSurprise()">
+                    <i class="fas fa-heart me-2"></i>
+                    ¡Mensaje Especial!
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal -->
+    <div class="modal fade custom-fade-modal" id="surpriseModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header border-0">
+                    <h5 class="modal-title" style="font-family: 'Orbitron', monospace; font-size: 2rem; color: var(--serious-gold);">🥊 SERIOUS
+                        PUNCH: TE QUIERO PAPA 💕</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body text-center p-5" style="color: var(--serious-white);">
+                    <video id="mensaje-especial-video" src="video/tequieropapa.mp4" controls style="max-width: 100%; border-radius: 20px; box-shadow: 0 0 30px #000a; margin-bottom: 2rem; background: #222;" poster="images/papasaitama.png"></video>
+                    <h3 style="color: var(--serious-gold); margin: 2rem 0 1rem 0;">¡TÉCNICA SECRETA ACTIVADA!</h3>
+                    <p style="font-size: 1.3rem; line-height: 1.6;">
+                        Papá, eres más increíble que todos los héroes de One Punch-Man juntos. Tu carisma es mi superpoder
+                        favorito, y tus consejos es mi entrenamiento diario.<br><br>
+                        <strong>¡Gracias por ser el papá más genial del universo!</strong><br><br>
+                        <em>Te amo más que Saitama ama las ofertas del supermercado. 🛒💛</em>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
